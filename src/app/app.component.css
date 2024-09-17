@@ -1,0 +1,16 @@
+/* Ensure the navbar is styled and positioned correctly */
+app-navbar {
+    display: block;
+  }
+  
+  /* Style for the main content area */
+  main {
+    padding: 20px; /* Adjust padding as needed */
+    background-color: #eeebeb; /* Light background color for the main content area */
+  }
+  
+  /* Ensure product component is displayed correctly */
+  app-product {
+    display: block;
+  }
+  

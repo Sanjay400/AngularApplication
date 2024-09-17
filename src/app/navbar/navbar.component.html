@@ -1,0 +1,16 @@
+<!-- navbar.component.html -->
+<nav class="navbar">
+  <div class="navbar-left">
+    <a class="navbar-brand" routerLink="/">Shopping</a>
+  </div>
+  <div class="navbar-right">
+    <a class="nav-link" routerLink="/login">Login</a>
+    <a class="nav-link" routerLink="/sign-up">Sign Up</a>
+    <a class="nav-link" routerLink="/cart">Cart</a>
+    <button (click)="onLogout()">Logout</button>
+  </div>
+</nav>
+
+
+  <router-outlet></router-outlet>
+

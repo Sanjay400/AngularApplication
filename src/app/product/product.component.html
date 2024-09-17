@@ -1,0 +1,23 @@
+<div class="filter-container">
+  <select [(ngModel)]="selectedCategory" (change)="filterProducts()">
+    <option value="">All Categories</option>
+    <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+  </select>
+
+  <input type="text" [(ngModel)]="searchText" (input)="filterProducts()" placeholder="Search product..." />
+</div>
+
+<div class="product-list">
+  <div *ngFor="let product of filteredProducts" class="product-item">
+    <img [src]="product.image" alt="{{ product.name }}" class="product-image">
+    <div class="product-details">
+      <h2>{{ product.name }}</h2>
+      <p>Price: ₹{{ product.price }}</p>
+      <p>Category: {{ product.category }}</p>
+      <p>Review: {{product.review}}</p>
+      <p>Offer: {{product.offers}}</p>
+
+      <button (click)="addToCart(product)">Add to Cart</button>
+    </div>
+  </div>
+</div>

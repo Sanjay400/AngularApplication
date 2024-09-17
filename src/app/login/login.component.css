@@ -1,0 +1,74 @@
+/* Basic styling for the form container */
+form {
+    max-width: 360px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for each form group */
+  div.form-group {
+    margin-bottom: 1rem;
+  }
+  
+  /* Styling for form labels */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: #333;
+  }
+  
+  /* Styling for form input fields */
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+  
+  /* Add a border color change on focus */
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Styling for error messages */
+  .error-message {
+    color: #dc3545; /* Red color for errors */
+    font-size: 0.75rem; /* Smaller font size for error messages */
+    margin-top: 0.25rem;
+  }
+  
+  /* Styling for the submit button */
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
+  }
+  
+  /* Disable button when form is invalid */
+  button:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+  }
+  
