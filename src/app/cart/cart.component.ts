@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +15,7 @@ export class CartComponent implements OnInit {
   cart: any[] = [];  // Initialize cart as an empty array
   totalPrice: number = 0;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private router:Router) {}
 
   ngOnInit(): void {
     // Retrieve user ID from localStorage
@@ -76,12 +77,12 @@ export class CartComponent implements OnInit {
     });
   }
   placeOrder(): void {
-    alert('Order placed successfully!');
-    // Implement the logic to handle order placement, such as storing it in the database and redirecting the user
+    this.router.navigate(['/shopping']);
   }
   getImageUrl(imagePath: string): string {
     // Remove './' from the path if present
     return imagePath.startsWith('./') ? imagePath.substring(2) : imagePath;
   }
+
   
 }

@@ -1,0 +1,27 @@
+<!-- shopping.component.html -->
+<div class="shopping-container">
+    <h1>Shopping Information</h1>
+    
+    <form (ngSubmit)="placeOrder()">
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input id="address" [(ngModel)]="address" name="address" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input id="phone" [(ngModel)]="phone" name="phone" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method:</label>
+        <select id="paymentMethod" [(ngModel)]="paymentMethod" name="paymentMethod">
+          <option value="cash">Cash on Delivery</option>
+          <option value="online">Online Payment</option>
+        </select>
+      </div>
+      
+      <button type="submit" class="place-order-button">Place Order</button>
+    </form>
+  </div>
+  

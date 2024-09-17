@@ -98,6 +98,7 @@
       "email": "sanjay@gmail.com",
       "password": "Sanjay@2002",
       "phoneNo": "8907564579",
+      "orderhistory": [],
       "cart": [
         {
           "id": "4",
@@ -118,8 +119,25 @@
           "offers": "5% off",
           "image": "./assets/image/image10.jpeg",
           "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Cooling Glass",
+          "category": "Fashion",
+          "price": 100,
+          "review": "Great quality",
+          "offers": "20% off",
+          "image": "./assets/image/image2.jpeg"
         }
-      ],
+      ]
+    },
+    {
+      "id": "61de",
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "password": "Ram@2002",
+      "phoneNo": "8907564511",
+      "cart": [],
       "orderhistory": []
     }
   ]
