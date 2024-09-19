@@ -128,6 +128,27 @@
           "review": "Great quality",
           "offers": "20% off",
           "image": "./assets/image/image2.jpeg"
+        },
+        {
+          "id": "1",
+          "name": "Redmi Note 8",
+          "category": "Electronics",
+          "price": 12000,
+          "review": "Good product",
+          "offers": "10% off",
+          "image": "./assets/image/image1.jpeg",
+          "isInCart": false,
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "Volley Ball",
+          "category": "Sports",
+          "price": 600,
+          "review": "Better Quality ",
+          "offers": "No offers",
+          "image": "./assets/image/image7.jpeg",
+          "isInCart": false
         }
       ]
     },

@@ -1,14 +1,21 @@
+/* navbar.component.css */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #007bff;
+  background-color: #262627;
   color: #ffffff;
 }
 
 .navbar-left {
   flex: 1;
+}
+
+.navbar-center {
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
 }
 
 .navbar-right {
@@ -23,4 +30,21 @@
 
 .nav-link:hover {
   text-decoration: underline;
+  color: aqua;
+}
+
+button {
+  color: white;
+  background-color: #007bff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.navbar-brand {
+color: #ffffff;
 }

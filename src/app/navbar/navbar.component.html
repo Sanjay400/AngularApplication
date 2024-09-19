@@ -3,15 +3,23 @@
   <div class="navbar-left">
     <a class="navbar-brand" routerLink="/">Shopping</a>
   </div>
+
+  <div class="navbar-center">
+    <!-- Display Hello, username if logged in -->
+    <span *ngIf="loggedInUserName">Hello, {{ loggedInUserName }}</span>
+  </div>
+
   <div class="navbar-right">
-    <a class="nav-link" routerLink="/login">Login</a>
-    <a class="nav-link" routerLink="/sign-up">Sign Up</a>
+    <!-- Hide login/signup when the user is logged in -->
+    <ng-container *ngIf="!loggedInUserName">
+      <a class="nav-link" routerLink="/login">Login</a>
+      <a class="nav-link" routerLink="/sign-up">Sign Up</a>
+    </ng-container>
     <a class="nav-link" routerLink="/cart">Cart</a>
-    <a class="nav-link" routerLink="/orderhistory">Your-Order</a>
-    <button (click)="onLogout()">Logout</button>
+    <a class="nav-link" routerLink="/orderhistory">Your Order</a>
+    <!-- Show logout button when logged in -->
+    <button *ngIf="loggedInUserName" (click)="onLogout()">Logout</button>
   </div>
 </nav>
 
-
-  <router-outlet></router-outlet>
-
+<router-outlet></router-outlet>

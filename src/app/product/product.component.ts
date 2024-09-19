@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
@@ -22,8 +22,8 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     // Fetch products from db.json or API
     this.http.get<any[]>('http://localhost:5000/products').subscribe(data => {
-      this.products = data;
-      this.filteredProducts = data;
+      this.products = data.map(product => ({ ...product, isInCart: false }));
+      this.filteredProducts = [...this.products];
       this.categories = [...new Set(data.map(product => product.category))]; // Get unique categories
     });
   }
@@ -51,9 +51,11 @@ export class ProductComponent implements OnInit {
             cart.push(product);
             this.http.put(`http://localhost:5000/users/${userId}`, { ...user, cart }).subscribe(() => {
               alert('Product added to cart!');
+              product.isInCart = true;  // Set flag to true
             });
           } else {
             alert('Product is already in your cart.');
+            product.isInCart = true;  // If already in cart, set the flag to true
           }
         } else {
           alert('User not found');

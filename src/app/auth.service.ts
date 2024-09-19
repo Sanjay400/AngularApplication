@@ -23,11 +23,9 @@ export class AuthService {
   }
 
   // Other authentication-related methods...
-
   logout(): void {
-    // Clear user data from localStorage
+    localStorage.removeItem('userId');
     localStorage.removeItem('loggedInUser');
-    // Redirect to login page
-    this.router.navigate(['']);
+    alert('You have been logged out.');
   }
 }

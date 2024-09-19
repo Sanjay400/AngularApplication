@@ -17,7 +17,10 @@
       <p>Review: {{product.review}}</p>
       <p>Offer: {{product.offers}}</p>
 
-      <button (click)="addToCart(product)">Add to Cart</button>
+      <!-- Button text changes based on isInCart flag -->
+      <button [disabled]="product.isInCart" (click)="addToCart(product)">
+        {{ product.isInCart ? 'In Basket' : 'Add to Cart' }}
+      </button>
     </div>
   </div>
 </div>
