@@ -1,0 +1,16 @@
+<div class="edit-user">
+    <h2>Edit User</h2>
+    <form (ngSubmit)="saveUser()">
+      <label for="name">Name</label>
+      <input type="text" id="name" [(ngModel)]="userData.name" name="name" />
+  
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="userData.email" name="email" />
+  
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" [(ngModel)]="userData.phoneNo" name="phone" />
+  
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  

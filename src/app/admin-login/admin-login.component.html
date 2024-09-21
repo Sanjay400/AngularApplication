@@ -1,0 +1,25 @@
+<div class="admin-login-container">
+    <div class="admin-login-box">
+      <h2>Admin Login</h2>
+      <form [formGroup]="adminLoginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" formControlName="email" placeholder="Enter admin email" required>
+          <div *ngIf="email?.invalid && email?.touched" class="error">
+            Please enter a valid email.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" formControlName="password" placeholder="Enter admin password" required>
+          <div *ngIf="password?.invalid && password?.touched" class="error">
+            Password must be at least 6 characters long.
+          </div>
+        </div>
+  
+        <button type="submit" [disabled]="adminLoginForm.invalid">Login</button>
+      </form>
+    </div>
+  </div>
+  

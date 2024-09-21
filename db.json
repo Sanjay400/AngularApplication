@@ -97,7 +97,8 @@
       "name": "Sanjay G S",
       "email": "sanjay@gmail.com",
       "password": "Sanjay@2002",
-      "phoneNo": "8907564579",
+      "phoneNo": "8907564500",
+      "active": true,
       "orderhistory": [],
       "cart": [
         {
@@ -149,6 +150,16 @@
           "offers": "No offers",
           "image": "./assets/image/image7.jpeg",
           "isInCart": false
+        },
+        {
+          "id": "9",
+          "name": "Fridge",
+          "category": "Home & Kitchen",
+          "price": 25000,
+          "review": "Excellent Product",
+          "offers": "15% off",
+          "image": "./assets/image/image9.jpeg",
+          "isInCart": false
         }
       ]
     },
@@ -159,7 +170,8 @@
       "password": "Ram@2002",
       "phoneNo": "8907564511",
       "cart": [],
-      "orderhistory": []
+      "orderhistory": [],
+      "active": true
     }
   ]
 }

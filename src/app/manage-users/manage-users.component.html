@@ -1,0 +1,30 @@
+<div class="manage-users">
+    <h2>Manage Users</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phoneNo }}</td>
+          <td>{{ user.active ? 'Active' : 'Inactive' }}</td>
+          <td>
+            <button (click)="editUser(user.id)">Edit</button>
+            <button (click)="deleteUser(user.id)">Delete</button>
+            <button (click)="toggleUserStatus(user)">
+              {{ user.active ? 'Deactivate' : 'Activate' }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

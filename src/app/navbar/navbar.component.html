@@ -1,23 +1,28 @@
-<!-- navbar.component.html -->
 <nav class="navbar">
   <div class="navbar-left">
+    <!-- Always show the "Shopping" link -->
     <a class="navbar-brand" routerLink="/">Shopping</a>
   </div>
 
   <div class="navbar-center">
-    <!-- Display Hello, username if logged in -->
-    <span *ngIf="loggedInUserName">Hello, {{ loggedInUserName }}</span>
+    <!-- Display "Hello, username" if logged in and not on admin pages -->
+    <span *ngIf="loggedInUserName && !isAdminPage">Hello, {{ loggedInUserName }}</span>
   </div>
 
   <div class="navbar-right">
-    <!-- Hide login/signup when the user is logged in -->
-    <ng-container *ngIf="!loggedInUserName">
-      <a class="nav-link" routerLink="/login">Login</a>
-      <a class="nav-link" routerLink="/sign-up">Sign Up</a>
+    <!-- Conditionally hide buttons based on the current route -->
+    <ng-container *ngIf="!isAdminPage">
+      <!-- Show login/signup only if not logged in and not on admin pages -->
+      <ng-container *ngIf="!loggedInUserName">
+        <a class="nav-link" routerLink="/login">Login</a>
+        <a class="nav-link" routerLink="/sign-up">Sign Up</a>
+      </ng-container>
+      <!-- Show Cart and Your Order links if not on admin pages -->
+      <a class="nav-link" routerLink="/cart">Cart</a>
+      <a class="nav-link" routerLink="/orderhistory">Your Order</a>
     </ng-container>
-    <a class="nav-link" routerLink="/cart">Cart</a>
-    <a class="nav-link" routerLink="/orderhistory">Your Order</a>
-    <!-- Show logout button when logged in -->
+
+    <!-- Always show the Logout button if logged in (including admin pages) -->
     <button *ngIf="loggedInUserName" (click)="onLogout()">Logout</button>
   </div>
 </nav>
