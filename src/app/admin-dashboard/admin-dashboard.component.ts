@@ -1,25 +1,28 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service'; // Ensure to import your AuthService
 
 @Component({
   selector: 'app-admin-dashboard',
-  standalone: true,
-  imports: [],
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent {
-  constructor(private router: Router, private authService: AuthService) {}
 
-  // Navigate to the Manage Users page
-  manageUsers() {
-    this.router.navigate(['/manage-users']); // Update with your actual route
-  }
+  constructor(private router: Router) {}
 
   // Logout function
   logout() {
-    this.authService.logout();
-    this.router.navigate(['/login']); // Redirect to the login page
+    // Clear any stored user authentication tokens (if any)
+    localStorage.removeItem('adminToken'); // Example if you store admin login data in localStorage
+    this.router.navigate(['/admin-login']); // Navigate back to the admin login page
+  }
+
+  // Navigate to Manage Users Page
+  navigateToManageUsers() {
+    this.router.navigate(['/manage-users']); // Assuming you have a route for managing users
+  }
+
+  navigateToManageProducts() {
+    this.router.navigate(['/manage-products']);
   }
 }

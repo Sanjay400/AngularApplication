@@ -1,0 +1,66 @@
+<div class="manage-products">
+    <h2>Manage Products</h2>
+  
+    <!-- Add New Product Form -->
+    <div class="add-product-form">
+      <h3>Add New Product</h3>
+      <input type="text" placeholder="Name" [(ngModel)]="newProduct.name">
+      <input type="text" placeholder="Category" [(ngModel)]="newProduct.category">
+      <input type="number" placeholder="Price" [(ngModel)]="newProduct.price">
+      <input type="text" placeholder="Review" [(ngModel)]="newProduct.review">
+      <input type="text" placeholder="Offers" [(ngModel)]="newProduct.offers">
+      <input type="file" (change)="onImageChange($event)">
+      <img *ngIf="imagePreview" [src]="imagePreview" alt="Image Preview" class="image-preview">
+  
+      <button (click)="addProduct()">Add Product</button>
+    </div>
+  
+    <!-- List of Products -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Review</th>
+          <th>Offers</th>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>
+            <input *ngIf="product.editing" [(ngModel)]="product.name" type="text">
+            <span *ngIf="!product.editing">{{ product.name }}</span>
+          </td>
+          <td>
+            <input *ngIf="product.editing" [(ngModel)]="product.category" type="text">
+            <span *ngIf="!product.editing">{{ product.category }}</span>
+          </td>
+          <td>
+            <input *ngIf="product.editing" [(ngModel)]="product.price" type="number">
+            <span *ngIf="!product.editing">{{ product.price }}</span>
+          </td>
+          <td>
+            <input *ngIf="product.editing" [(ngModel)]="product.review" type="text">
+            <span *ngIf="!product.editing">{{ product.review }}</span>
+          </td>
+          <td>
+            <input *ngIf="product.editing" [(ngModel)]="product.offers" type="text">
+            <span *ngIf="!product.editing">{{ product.offers }}</span>
+          </td>
+          <td>
+            <img [src]="product.image" alt="Product Image" width="80">
+            <input *ngIf="product.editing" type="file" (change)="onImageChangeForProduct($event, product)">
+          </td>
+          <td>
+            <button *ngIf="!product.editing" (click)="editProduct(product)">Edit</button>
+            <button *ngIf="product.editing" (click)="saveProduct(product)">Save</button>
+            <button (click)="deleteProduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

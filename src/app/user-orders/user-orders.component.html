@@ -1,0 +1,23 @@
+<!-- user-orders.component.html -->
+<div *ngIf="orders.length === 0">
+    <h2>No orders found for this user.</h2>
+  </div>
+  
+  <div *ngIf="orders.length > 0">
+    <h2>Order History</h2>
+    <div *ngFor="let order of orders">
+      <h3>Order Date: {{ order.orderDate | date }}</h3>
+      <h3>Delivery Date: {{ order.deliveryDate | date }}</h3>
+      <ul>
+        <li *ngFor="let product of order.products">
+          <img [src]="product.image" alt="{{ product.name }}" width="50">
+          <p>{{ product.name }} (x{{ product.quantity }}) - ₹{{ product.price }}</p>
+        </li>
+      </ul>
+      <p><strong>Address:</strong> {{ order.address }}</p>
+      <p><strong>Phone:</strong> {{ order.phone }}</p>
+      <p><strong>Payment Method:</strong> {{ order.paymentMethod }}</p>
+      <hr />
+    </div>
+  </div>
+  

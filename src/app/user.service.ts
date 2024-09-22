@@ -13,6 +13,9 @@ export class UserService {
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(this.baseUrl);
   }
+  getUserById(userId: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/${userId}`);
+  }
 
   updateUser(userId: string, userData: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/${userId}`, userData);

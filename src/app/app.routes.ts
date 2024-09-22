@@ -10,6 +10,8 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { UserOrdersComponent } from './user-orders/user-orders.component';
+import { ManageProductsComponent } from './manage-products/manage-products.component';
 
 
 export const routes: Routes = [
@@ -24,6 +26,8 @@ export const routes: Routes = [
   { path: 'admin-dashboard', component: AdminDashboardComponent},
   { path: 'manage-users', component: ManageUsersComponent },
   { path: 'edit-user/:id', component: EditUserComponent },
+  { path: 'user-orders/:userId', component: UserOrdersComponent },
+  { path: 'manage-products', component: ManageProductsComponent },
   { path: '**', redirectTo: '' } // Wildcard route for 404 or redirect to home
    
 ];
